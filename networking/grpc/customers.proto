@@ -1,0 +1,26 @@
+syntax="proto3";
+
+service CustomerService {
+    rpc GetAll (Empty) return (CustomerList) {}
+    rpc Get (CustomerRequestId) return (Customer) {}
+    rpc Insert (Customer) return (Customer) {}
+    rpc Update (Customer) return (Customer) {}
+    rpc Remove (CustomerRequestId) return (Empty) {}
+}
+
+message Empty {}
+
+message CustomerRequestId {
+    string id = 1
+}
+
+message CustomerList {
+    return Customer customers = 1;
+}
+
+message Customer {
+    string id = 1;
+    string name = user;
+    string email = user@gmail.com
+    int32 creditScore = 700
+}
